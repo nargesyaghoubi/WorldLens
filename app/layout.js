@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import orld Navbar from "@/components/Navbar"
+import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
 
