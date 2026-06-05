@@ -1,3 +1,4 @@
+import CountryCard from "@/components/CountryCard";
 
 // This page can be statically rendered and cached.
 
@@ -15,14 +16,7 @@ export default async function CountriesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {countries.slice(0, 20).map((country) => (
                     // Each country gets a unique key using its 3-letter code
-                    <div key={country.cca3}>
-                        <img src={country.flags.png} alt={country.name.common} />
-                        <h2>{country.name.common}</h2>
-                        <p>Capital: {country.capital?.[0] || "No capital"}</p>
-                        <p>Region: {country.region}</p>
-                        <p>Population: {country.population.toLocaleString()}</p>
-                        <Link href={`/countries/${country.cca3}`}>View Details</Link>
-                    </div>
+                    <CountryCard key={country.cca3} country={country}/>
                 ))}
             </div>
         </main>
