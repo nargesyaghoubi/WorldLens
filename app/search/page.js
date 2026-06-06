@@ -1,9 +1,10 @@
 import CountrySearch from "@/components/CountrySearch";
 
 export default async function SearchPage() {
-    const res = await fetch("https://restcountries.com/v3.1/all", {
-        cache: "force-cache",
-    });
+    const res = await fetch(
+        "https://restcountries.com/v3.1/all?fields=cca3,name,capital,region,population,flags",
+        { cache: "force-cache" }
+    );
 
     const countries = await res.json();
 

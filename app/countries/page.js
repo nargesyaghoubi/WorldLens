@@ -3,10 +3,10 @@ import CountryCard from "@/components/CountryCard";
 // This page can be statically rendered and cached.
 
 export default async function CountriesPage() {
-    const res = await fetch("https://restcountries.com/v3.1/all", {
-        cache: "force-cache",
-    });
-
+    const res = await fetch(
+        "https://restcountries.com/v3.1/all?fields=cca3,name,capital,region,population,flags",
+        { cache: "force-cache" }
+    );
     const countries = await res.json();
 
     return (
