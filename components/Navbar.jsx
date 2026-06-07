@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import { Globe } from "lucide-react";
 
 const links = [
     { href: "/", label: "Home" },
@@ -21,8 +22,9 @@ export default function Navbar() {
         <header className="shadow-md py-4" style={{ backgroundColor: "var(--bg)" }}>
             <div className="container mx-auto px-4 flex justify-between items-center">
 
-                <Link href="/" className="text-xl font-bold" style={{ color: "var(--primary)" }}>
-                    🌍 World Explorer
+                <Link href="/" className="text-xl font-bold flex items-center gap-2" style={{ color: "var(--primary)" }}>
+                    <Globe size={22} />
+                    WorldLens
                 </Link>
 
                 {/* Desktop nav */}
