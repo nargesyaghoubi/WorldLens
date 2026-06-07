@@ -11,7 +11,7 @@ export const metadata = {
 
   export default function RootLayout ({ children }){
     return(
-        <html lang='en' suppressHydrationWarning>
+        <html lang='en' suppressHydrationWarning data-theme="light">
             <body>
                 <Navbar/>
                     <main className='container mx-auto px-4'> {children} </main>
