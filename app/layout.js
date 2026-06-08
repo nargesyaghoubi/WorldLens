@@ -5,6 +5,9 @@ import Footer from "@/components/Footer"
 export const metadata = {
     title: "WorldLens",
     description: "Explore countries around the world",
+    icons: {
+        icon: "/favicon.svg",
+      },
 };
 export default function RootLayout ({ children }){
     return(
