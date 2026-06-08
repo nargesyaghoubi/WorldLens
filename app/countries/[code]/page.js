@@ -62,7 +62,7 @@ export default async function CountryDetailsPage({ params }) {
                 className="rounded-2xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: "var(--card-bg)" }}
             >
-                <div style={{ height: "280px", overflow: "hidden" }}>
+                <div style={{ height: "220px", overflow: "hidden" }}>
                     <img
                         src={country.flags.svg || country.flags.png}
                         alt={`Flag of ${country.name.common}`}
