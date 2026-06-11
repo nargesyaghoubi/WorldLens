@@ -1,7 +1,5 @@
 import CountrySearch from "@/components/CountrySearch";
 
-export const dynamic = 'force-dynamic';
-
 export const metadata = {
     title: "Search Countries | World Explorer",
 };
@@ -13,15 +11,6 @@ export default async function SearchPage() {
     );
 
     const countries = await res.json();
-
-    // Make sure data is an array before sorting
-    if (!Array.isArray(countries)) {
-        return (
-            <main className="py-10 px-4 text-center">
-                <p style={{color: "var(--text)"}}>Failed to load countries. Please try again.</p>
-            </main>
-        );
-    }
 
     const sorted = countries.sort((a, b) =>
         a.name.common.localeCompare(b.name.common)
