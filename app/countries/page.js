@@ -1,5 +1,8 @@
 import CountryCard from "@/components/CountryCard";
 
+// Force dynamic rendering - don't prerender at build time
+export const dynamic = 'force-dynamic';
+
 // This page can be statically rendered and cached.
 export default async function CountriesPage() {
     const res = await fetch(
