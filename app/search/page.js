@@ -12,9 +12,9 @@ export default async function SearchPage() {
 
     const countries = await res.json();
 
-    const sorted = countries.sort((a, b) =>
-        a.name.common.localeCompare(b.name.common)
-    );
+    const sorted = Array.isArray(countries)
+        ? countries.sort((a, b) => a.name.common.localeCompare(b.name.common))
+        : [];
 
     return (
         <main className="py-10 px-4">
