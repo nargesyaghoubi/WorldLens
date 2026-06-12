@@ -7,7 +7,8 @@ export default async function CountriesPage() {
     const res = await fetch(
         "https://restcountries.com/v3.1/all?fields=cca3,name,capital,region,population,flags"
     );
-    const countries = await res.json();
+    const data = await res.json();
+    const countries = Array.isArray(data) ? data : [];
 
     return (
         <main className="py-10 px-4">
