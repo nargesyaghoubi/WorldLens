@@ -1,20 +1,19 @@
 import CountrySearch from "@/components/CountrySearch";
+import { getAllCountries } from "@/lib/countries";
 
 export const metadata = {
     title: "Search Countries | World Explorer",
 };
 
 export default async function SearchPage() {
-    const res = await fetch(
-        "https://restcountries.com/v3.1/all?fields=cca3,name,capital,region,population,flags",
-        { cache: "force-cache" }
+    const countries = await getAllCountries({
+        limit: 100,
+        cache: "force-cache",
+    });
+
+    const sorted = countries.sort((a, b) =>
+        a.name.common.localeCompare(b.name.common)
     );
-
-    const countries = await res.json();
-
-    const sorted = Array.isArray(countries)
-        ? countries.sort((a, b) => a.name.common.localeCompare(b.name.common))
-        : [];
 
     return (
         <main className="py-10 px-4">
