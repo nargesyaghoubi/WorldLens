@@ -55,22 +55,25 @@
 
 ---
 
-
-
-
 ## API Used
 
-[REST Countries API](https://restcountries.com) — `https://restcountries.com/v3.1`
+[REST Countries API](https://restcountries.com) — `https://api.restcountries.com/countries/v5`
+
+This project requires a free API key. Sign up at [restcountries.com](https://restcountries.com/sign-up) to get one.
+
 
 ---
-
 ## Getting Started
 
 ```bash
 npm install
-npm run dev
 ```
 
+Create a `.env.local` file in the root directory and add your API key:
+
+```bash
+npm run dev
+```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
