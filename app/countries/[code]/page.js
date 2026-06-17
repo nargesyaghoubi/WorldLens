@@ -1,16 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getCountryByCode } from "@/lib/countries";
 
 export async function generateMetadata({ params }) {
     try {
         const { code } = await params;
-        const res = await fetch(
-            `https://restcountries.com/v3.1/alpha/${code}`,
-            { cache: "no-store" }
-        );
-        if (!res.ok) return { title: "Country Not Found | World Explorer" };
-        const data = await res.json();
-        const country = data[0];
+        const country = await getCountryByCode(code, { cache: "no-store" });
         if (!country) return { title: "Country Not Found | World Explorer" };
         return {
             title: `${country.name.common} | World Explorer`,
@@ -25,20 +20,13 @@ export default async function CountryDetailsPage({ params }) {
     // This page fetches fresh data every time.
     const { code } = await params;
 
-    let res;
+    let country;
     try {
-        res = await fetch(
-            `https://restcountries.com/v3.1/alpha/${code}`,
-            { cache: "no-store" }
-        );
+        country = await getCountryByCode(code, { cache: "no-store" });
     } catch {
         notFound();
     }
 
-    if (!res.ok) notFound();
-
-    const data = await res.json();
-    const country = data[0];
     if (!country) notFound();
 
     const languages = country.languages
@@ -57,7 +45,6 @@ export default async function CountryDetailsPage({ params }) {
 
     return (
         <main className="max-w-5xl mx-auto py-10 px-4">
-
             {/* Back Button */}
             <Link
                 href="/countries"
@@ -104,13 +91,16 @@ export default async function CountryDetailsPage({ params }) {
                     {/* Info Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                         {[
-                            { label: "🏛️ Capital", value: country.capital?.[0] || "N/A" },
+                            { label: "🏛 Capital", value: country.capital?.[0] || "N/A" },
                             { label: "🌍 Region", value: country.region || "N/A" },
                             { label: "📍 Subregion", value: country.subregion || "N/A" },
-                            { label: "👥 Population", value: country.population.toLocaleString() },
-                            { label: "🗣️ Languages", value: languages },
+                            {
+                                label: "👥 Population",
+                                value: country.population?.toLocaleString() || "N/A",
+                            },
+                            { label: "🗣 Languages", value: languages },
                             { label: "💰 Currencies", value: currencies },
-                            { label: "🕐 Time Zones", value: timezones },
+                            { label: "🕒 Time Zones", value: timezones },
                         ].map(({ label, value }) => (
                             <div
                                 key={label}
@@ -128,10 +118,7 @@ export default async function CountryDetailsPage({ params }) {
                                 >
                                     {label}
                                 </p>
-                                <p
-                                    className="text-sm"
-                                    style={{ color: "var(--text)" }}
-                                >
+                                <p className="text-sm" style={{ color: "var(--text)" }}>
                                     {value}
                                 </p>
                             </div>
@@ -150,7 +137,7 @@ export default async function CountryDetailsPage({ params }) {
                                 color: "#fff",
                             }}
                         >
-                            🗺️ View on Google Maps
+                            📍 View on Google Maps
                         </a>
                     )}
                 </div>
