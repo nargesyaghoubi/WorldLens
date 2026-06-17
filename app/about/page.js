@@ -3,33 +3,44 @@ export default function AboutPage() {
         <main className="max-w-3xl mx-auto py-12 px-4">
 
             {/* Page title */}
-            <h1 className="text-4xl font-bold mb-6" style={{color: "var(--primary)"}}>
-                About World Explorer
+            <h1 className="text-4xl font-bold mb-6" style={{ color: "var(--primary)" }}>
+                About WorldLense
             </h1>
 
-            {/* Description */}
-            <p className="text-lg mb-8" style={{color: "var(--text)"}}>
-                World Explorer is a Next.js project that uses real API data 
-                to display countries around the world.
-            </p>
+            {/* What it is */}
+            <div className="rounded-xl p-6 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
+                <h2 className="text-xl font-semibold mb-2" style={{ color: "var(--primary)" }}>
+                    🌍 What is WorldLense?
+                </h2>
+                <p style={{ color: "var(--text)" }}>
+                    WorldLense is a Next.js project that uses real API data to display
+                    countries around the world. Users can browse all countries, filter by
+                    region, search by name, and open a detailed page for each country.
+                </p>
+                <p style={{ color: "var(--text)" }}>
+                    Each country detail page shows the flag, official name, capital,
+                    region, subregion, population, languages, currencies, time zones, and
+                    a direct link to Google Maps.
+                </p>
+            </div>
 
             {/* API section */}
-            <div className="rounded-xl p-6 mb-6" style={{backgroundColor: "var(--card-bg)"}}>
-                <h2 className="text-xl font-semibold mb-2" style={{color: "var(--primary)"}}>
+            <div className="rounded-xl p-6 mb-6" style={{ backgroundColor: "var(--card-bg)" }}>
+                <h2 className="text-xl font-semibold mb-2" style={{ color: "var(--primary)" }}>
                     🌐 API Used
                 </h2>
-                <p style={{color: "var(--text)"}}>
+                <p style={{ color: "var(--text)" }}>
                     REST Countries API —{" "}
                     <a href="https://restcountries.com" target="_blank"
-                        className="hover:opacity-70 underline" style={{color: "var(--primary)"}}>
+                        className="hover:opacity-70 underline" style={{ color: "var(--primary)" }}>
                         restcountries.com
                     </a>
                 </p>
             </div>
 
             {/* Topics section */}
-            <div className="rounded-xl p-6" style={{backgroundColor: "var(--card-bg)"}}>
-                <h2 className="text-xl font-semibold mb-4" style={{color: "var(--primary)"}}>
+            <div className="rounded-xl p-6" style={{ backgroundColor: "var(--card-bg)" }}>
+                <h2 className="text-xl font-semibold mb-4" style={{ color: "var(--primary)" }}>
                     ⚡ Next.js Topics Practiced
                 </h2>
                 <ul className="flex flex-col gap-2">
@@ -44,9 +55,9 @@ export default function AboutPage() {
                         "Static rendering and caching",
                         "Dynamic rendering",
                     ].map((topic) => (
-                        <li key={topic} className="flex items-center gap-2 text-sm" 
-                            style={{color: "var(--text)"}}>
-                            <span style={{color: "var(--primary)"}}>✓</span>
+                        <li key={topic} className="flex items-center gap-2 text-sm"
+                            style={{ color: "var(--text)" }}>
+                            <span style={{ color: "var(--primary)" }}>✓</span>
                             {topic}
                         </li>
                     ))}
