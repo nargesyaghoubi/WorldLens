@@ -52,7 +52,7 @@ export default function Footer() {
                 {/* Bottom */}
                 <div className="text-center text-sm mt-6 pt-4"
                     style={{ borderTop: "1px solid var(--primary)", color: "var(--text)" }}>
-                    © {year} Narges Yaghoubi — Built with Next.js App Router
+                    © {year} WorldLens — Built with Next.js App Router
                 </div>
 
             </div>
