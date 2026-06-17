@@ -4,31 +4,43 @@
 
 ---
 
+## Live Demo:
+https://world-explorer-flax.vercel.app/
+
+
+---
+
 ## 📸 Screenshots
 
 <div align="center">
   <table align="center">
     <tr align="center">
       <td align="center">
-        <h3>Desktop View</h3>
+        <h3>Details</h3>
         <a href="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/desktop-details.png">
           <img src="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/desktop-details.png?raw=true" height="400px">
         </a>
       </td>
       <td align="center">
-        <h3>Desktop View</h3>
+        <h3>Country</h3>
+        <a href="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/desktop-country.png">
+          <img src="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/desktop-country.png?raw=true" height="400px">
+        </a>
+      </td>
+      <td align="center">
+        <h3>Search</h3>
         <a href="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/desktop-search.png">
           <img src="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/desktop-search.png?raw=true" height="400px">
         </a>
       </td>
       <td align="center">
-        <h3>Mobile View</h3>
+        <h3>About</h3>
         <a href="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/mobile-dark.png">
           <img src="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/mobile-dark.png?raw=true" height="400px">
         </a>
       </td>
       <td align="center">
-        <h3>Mobile View</h3>
+        <h3>Home</h3>
         <a href="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/mobile-light.png">
           <img src="https://github.com/nargesyaghoubi/WorldLens/blob/main/public/mobile-light.png?raw=true" height="400px">
         </a>
